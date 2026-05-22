@@ -1,0 +1,20 @@
+
+> sahyata@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1905ms
+ ○ Compiling / ...
+ ✓ Compiled / in 7.6s (1440 modules)
+ HEAD / 200 in 8259ms
+ ✓ Compiled in 897ms (700 modules)
+ GET / 200 in 104ms
+ ✓ Compiled in 715ms (1431 modules)
+ ✓ Compiled in 329ms (1431 modules)
+ ✓ Compiled in 266ms (1431 modules)
+ GET / 200 in 250ms
+ ✓ Compiled in 939ms (1431 modules)
+ ✓ Compiled in 670ms (1431 modules)
