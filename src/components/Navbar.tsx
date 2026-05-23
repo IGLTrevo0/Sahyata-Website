@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -27,60 +28,74 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-md" : "bg-transparent"
-      )}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center">
-          <Link href="/" className="text-2xl font-bold text-primary">
-            Sahyata
+    <>
+      <nav
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
+          isScrolled ? "bg-white/90 backdrop-blur-md shadow-md" : "bg-transparent"
+        )}
+      >
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          <Link href="/" className="shrink-0 flex items-center">
+            <Image
+              src="/sahyata-logo.png"
+              alt="Sahyata Shubh-Hith Foundation"
+              width={160}
+              height={48}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
-        </div>
 
-        {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
+          {/* Desktop: links + CTAs in one aligned row */}
+          <div className="hidden lg:flex flex-1 items-center justify-end gap-5 xl:gap-7 min-w-0">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "inline-flex h-10 items-center whitespace-nowrap text-sm xl:text-base font-medium transition-colors",
+                  isScrolled ? "text-text hover:text-primary" : "text-white/90 hover:text-primary"
+                )}
+              >
+                {link.name}
+              </Link>
+            ))}
             <Link
-              key={link.name}
-              href={link.href}
-              className="text-text font-medium hover:text-primary transition-colors"
+              href="#get-involved"
+              className={cn(
+                "inline-flex h-10 items-center justify-center px-4 border-2 font-bold rounded-full transition-all text-sm xl:text-base whitespace-nowrap",
+                isScrolled
+                  ? "border-primary text-primary hover:bg-primary hover:text-white"
+                  : "border-white text-white hover:bg-white hover:text-text"
+              )}
             >
-              {link.name}
+              Get Involved
             </Link>
-          ))}
-        </div>
+            <Link
+              href="#donate"
+              className="inline-flex h-10 items-center justify-center px-5 bg-primary text-white font-bold rounded-full hover:bg-opacity-90 hover:scale-105 active:scale-95 transition-all shadow-[0_4px_10px_rgba(233,30,140,0.2)] text-sm xl:text-base whitespace-nowrap"
+            >
+              Donate
+            </Link>
+          </div>
 
-        {/* CTA Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
-          <Link
-            href="#events"
-            className="px-5 py-2 border-2 border-primary text-primary font-bold rounded-full hover:bg-primary hover:text-white transition-all"
+          {/* Mobile Menu Button */}
+          <button
+            className={cn(
+              "lg:hidden transition-colors",
+              isScrolled || isMobileMenuOpen ? "text-text" : "text-white"
+            )}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            Register
-          </Link>
-          <Link
-            href="#get-involved"
-            className="px-5 py-2 bg-primary text-white font-bold rounded-full hover:bg-opacity-90 transition-all"
-          >
-            Get Involved
-          </Link>
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-text"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
+      </nav>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-[72px] bg-white z-40 flex flex-col items-center pt-10 space-y-6 md:hidden animate-in fade-in slide-in-from-top duration-300">
+        <div className="fixed inset-0 top-[72px] bg-white z-40 flex flex-col items-center pt-10 space-y-6 lg:hidden animate-in fade-in slide-in-from-top duration-300">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -93,22 +108,22 @@ export default function Navbar() {
           ))}
           <div className="flex flex-col space-y-4 w-full px-10 pt-4">
             <Link
-              href="#events"
-              className="w-full py-3 text-center border-2 border-primary text-primary font-bold rounded-full"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Register
-            </Link>
-            <Link
               href="#get-involved"
-              className="w-full py-3 text-center bg-primary text-white font-bold rounded-full"
+              className="w-full py-3 text-center border-2 border-primary text-primary font-bold rounded-full"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Get Involved
             </Link>
+            <Link
+              href="#donate"
+              className="w-full py-3 text-center bg-primary text-white font-bold rounded-full shadow-[0_4px_10px_rgba(233,30,140,0.2)]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Donate
+            </Link>
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 }
