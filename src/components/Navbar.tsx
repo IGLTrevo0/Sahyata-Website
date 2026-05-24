@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { Scheherazade_New } from "next/font/google";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+const scheherazade = Scheherazade_New({ weight: ["400", "700"], subsets: ["latin"] });
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -36,15 +38,18 @@ export default function Navbar() {
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <Link href="/" className="shrink-0 flex items-center">
-            <Image
-              src="/sahyata-logo.png"
-              alt="Sahyata Shubh-Hith Foundation"
-              width={160}
-              height={48}
-              className="h-10 w-auto object-contain"
-              priority
-            />
+          <Link href="/" className="shrink-0 inline-flex flex-col items-start text-[#FFFFFF]">
+            <span
+              className={cn(
+                scheherazade.className,
+                "text-2xl font-bold tracking-widest uppercase text-[#FFFFFF] leading-none w-full border-b border-[#FFFFFF] pb-1 mb-1"
+              )}
+            >
+              SAHAYATA
+            </span>
+            <span className="w-full text-left text-xs font-normal tracking-wider text-[#FFFFFF] leading-tight">
+              Shubh-Hith Foundation
+            </span>
           </Link>
 
           {/* Desktop: links + CTAs in one aligned row */}

@@ -8,8 +8,6 @@ const images = [
   "/hero-1.webp",
   "/hero-2.webp",
   "/hero-3.webp",
-  "https://placehold.co/1920x1080/2D2D2D/FFFFFF?text=IMAGE+4",
-  "https://placehold.co/1920x1080/2D2D2D/FFFFFF?text=IMAGE+5",
 ];
 
 export default function Hero() {
@@ -23,26 +21,33 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden">
-      {/* Background Carousel */}
-      <div className="absolute inset-0">
-        <AnimatePresence mode="wait">
+    <section id="home" className="relative z-0 h-screen w-full overflow-hidden">
+      {/* Background Carousel — pointer-events-none so fixed navbar stays clickable */}
+      <div className="absolute inset-0 pointer-events-none">
+        <AnimatePresence mode="sync">
           <motion.div
             key={current}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${images[current]})` }}
+            transition={{ duration: 0.6 }}
+            className="absolute inset-0"
           >
-            <div className="absolute inset-0 bg-black/50" />
+            <img
+              src={images[current]}
+              alt=""
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         </AnimatePresence>
+        <div
+          className="absolute inset-0"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 pt-20 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
