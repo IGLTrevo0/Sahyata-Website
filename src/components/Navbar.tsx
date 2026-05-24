@@ -34,20 +34,21 @@ export default function Navbar() {
       <nav
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-          isScrolled ? "bg-white/90 backdrop-blur-md shadow-md" : "bg-transparent"
+          isScrolled ? "bg-white backdrop-blur-md shadow-md" : "bg-transparent"
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          <Link href="/" className="shrink-0 inline-flex flex-col items-start text-[#FFFFFF]">
+          <Link href="/" className={cn("shrink-0 inline-flex flex-col items-start", isScrolled ? "text-[#000000]" : "text-[#FFFFFF]")}>
             <span
               className={cn(
                 scheherazade.className,
-                "text-2xl font-bold tracking-widest uppercase text-[#FFFFFF] leading-none w-full border-b border-[#FFFFFF] pb-1 mb-1"
+                "text-3xl font-bold tracking-widest uppercase leading-none w-full border-b pb-1 mb-1",
+                isScrolled ? "text-[#000000] border-[#000000]" : "text-[#FFFFFF] border-[#FFFFFF]"
               )}
             >
               SAHAYATA
             </span>
-            <span className="w-full text-left text-xs font-normal tracking-wider text-[#FFFFFF] leading-tight">
+            <span className={cn("w-full text-left text-[10px] font-normal tracking-wider leading-tight", isScrolled ? "text-[#000000]" : "text-[#FFFFFF]")}>
               Shubh-Hith Foundation
             </span>
           </Link>
@@ -60,7 +61,7 @@ export default function Navbar() {
                 href={link.href}
                 className={cn(
                   "inline-flex h-10 items-center whitespace-nowrap text-sm xl:text-base font-medium transition-colors",
-                  isScrolled ? "text-text hover:text-primary" : "text-white/90 hover:text-primary"
+                  isScrolled ? "text-[#000000] hover:text-primary" : "text-[#FFFFFF] hover:text-primary"
                 )}
               >
                 {link.name}

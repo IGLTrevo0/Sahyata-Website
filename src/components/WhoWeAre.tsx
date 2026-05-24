@@ -26,7 +26,7 @@ export default function WhoWeAre() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg text-text-body leading-relaxed"
           >
-            Sahyata is a non-governmental organization born out of a shared vision to bridge the gap for those struggling with extreme poverty and food insecurity. We believe that every individual deserves a life of dignity, starting with the most basic human right: access to nutritious food.
+            Sahyata is a volunteer-driven movement fighting hunger and poverty on the ground. Every week we organise food drives, reach the most underserved corners of the city, and make sure the people who are often forgotten — aren't. No big machinery, no bureaucracy. Just people who show up.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export default function WhoWeAre() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-text-body leading-relaxed"
           >
-            Our journey started with a small group of passionate volunteers at VIT Vellore, and today, we have grown into a community of hundreds dedicated to creating a hunger-free world. Through our grassroots initiatives and sustainable programs, we aim to provide not just immediate relief, but long-term empowerment.
+            What started as a small drive has grown into something much bigger than any of us expected. Hundreds of volunteers, thousands of meals, and a community that feels less like an NGO and more like a family. We don't do this for recognition. We do it because every Thursday, someone is waiting — and we've never let them down
           </motion.p>
         </div>
 

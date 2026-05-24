@@ -84,7 +84,7 @@ export default function GetInvolved() {
               <div className="rounded-xl bg-green-50 border border-green-200 p-6 text-center">
                 <p className="text-xl font-bold text-green-800 mb-2">Registration successful!</p>
                 <p className="text-lg font-semibold text-green-700">
-                  Thank you for registering! We&apos;ll reach out to you soon. 🙏
+                  Thank you for registering! We&apos;ll reach out to you soon. 
                 </p>
               </div>
             ) : (
