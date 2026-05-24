@@ -24,6 +24,28 @@ function IconBrandInstagram({ className }: { className?: string }) {
   );
 }
 
+function IconBrandLinkedin({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M8 11v5" />
+      <path d="M8 8v.01" />
+      <path d="M12 16v-5" />
+      <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+    </svg>
+  );
+}
+
 function IconBrandWhatsapp({ className }: { className?: string }) {
   return (
     <svg
@@ -101,6 +123,17 @@ export default function Contact() {
                 aria-label="WhatsApp"
               >
                 <IconBrandWhatsapp className="w-7 h-7" />
+              </motion.a>
+              <motion.a
+                href="https://in.linkedin.com/company/sahayata-foundation"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="group w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-text shadow-sm transition-colors hover:text-[#0A66C2]"
+                aria-label="LinkedIn"
+              >
+                <IconBrandLinkedin className="w-7 h-7" />
               </motion.a>
             </div>
           </motion.div>

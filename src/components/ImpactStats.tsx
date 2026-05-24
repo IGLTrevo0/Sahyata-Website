@@ -8,10 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { label: "Lives Touched", value: 5000, suffix: "+" },
-  { label: "Meals Served", value: 12000, suffix: "+" },
-  { label: "Volunteers", value: 350, suffix: "+" },
-  { label: "Cities Reached", value: 12, suffix: "+" },
+  { label: "Thursdays Missed", value: 0, suffix: "" },
+  { label: "Drives Completed", value: 450, suffix: "+" },
+  { label: "People Fed", value: 100000, suffix: "+" },
+  { label: "Volunteers", value: 500, suffix: "+" },
 ];
 
 export default function ImpactStats() {

@@ -5,11 +5,11 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-  "https://placehold.co/1920x1080/2D2D2D/FFFFFF?text=Sahyata+Image+1",
-  "https://placehold.co/1920x1080/2D2D2D/FFFFFF?text=Sahyata+Image+2",
-  "https://placehold.co/1920x1080/2D2D2D/FFFFFF?text=Sahyata+Image+3",
-  "https://placehold.co/1920x1080/2D2D2D/FFFFFF?text=Sahyata+Image+4",
-  "https://placehold.co/1920x1080/2D2D2D/FFFFFF?text=Sahyata+Image+5",
+  "/hero-1.webp",
+  "/hero-2.webp",
+  "/hero-3.webp",
+  "https://placehold.co/1920x1080/2D2D2D/FFFFFF?text=IMAGE+4",
+  "https://placehold.co/1920x1080/2D2D2D/FFFFFF?text=IMAGE+5",
 ];
 
 export default function Hero() {
