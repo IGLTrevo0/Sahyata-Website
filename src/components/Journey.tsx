@@ -8,12 +8,46 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const milestones = [
-  { year: "2024", title: "The Beginning", description: "Sahyata was founded by a group of passionate students at VIT Vellore with a single food drive." },
-  { year: "2024", title: "Community Growth", description: "Expanded to 50+ regular volunteers and established partnerships with local restaurants." },
-  { year: "2025", title: "Hunger-Free Zones", description: "Launched our first 'Hunger-Free Zone' initiative, providing 500+ meals daily." },
-  { year: "2025", title: "Sustainable Relief", description: "Started vocational training programs for families in our relief areas." },
-  { year: "2026", title: "Multi-City Impact", description: "Expanded operations to 10 additional cities across the region." },
-  { year: "Today", title: "Continuing the Legacy", description: "Touching thousands of lives every day and striving for a hunger-free world." },
+  {
+    year: "2019",
+    title: "The Beginning",
+    description: "Sahyata began as a small group of college students distributing hot meals to families in local neighborhoods. Seeing the immediate need for support motivated us to turn this informal drive into a weekly commitment."
+  },
+  {
+    year: "2020",
+    title: "First Steps",
+    description: "As the pandemic brought unprecedented challenges, we structured our team to deliver essential dry ration kits to daily wage workers. This period taught us the importance of organizing resources efficiently in times of crisis."
+  },
+  {
+    year: "2021",
+    title: "Growing Reach",
+    description: "With restrictions easing, we expanded our volunteer network to reach nearby communities and schools. We also began collaborating with local kitchens to prepare nutritious meals on a larger scale."
+  },
+  {
+    year: "2022",
+    title: "Expanding Operations",
+    description: "We established dedicated distribution centers to streamline food storage and supply management. These hubs allowed us to support more families consistently throughout the week."
+  },
+  {
+    year: "2023",
+    title: "Community Partnerships",
+    description: "By partnering with local farmers and grocery stores, we reduced food waste while keeping our sourcing costs low. This collaborative model helped ensure the long-term sustainability of our daily meal programs."
+  },
+  {
+    year: "2024",
+    title: "Scaling Impact",
+    description: "Our initiatives expanded into neighboring districts, bringing together student chapters across several educational institutions. This growth enabled us to address hunger issues in both urban areas and rural pockets."
+  },
+  {
+    year: "2025",
+    title: "Strengthening Roots",
+    description: "We focused on setting up educational support and vocational training alongside our core food drives. Helping families achieve self-reliance became central to our mission of breaking the cycle of poverty."
+  },
+  {
+    year: "Today",
+    title: "Looking Ahead",
+    description: "Today, we continue to serve thousands of individuals while working towards long-term systemic solutions. Our focus remains on expanding our reach to new areas without compromising the quality of our care."
+  }
 ];
 
 export default function Journey() {
